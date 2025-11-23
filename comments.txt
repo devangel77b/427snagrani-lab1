@@ -1,0 +1,16 @@
+1. This is a review of the manuscript "Verifying Galileo's acceleration experiment with modern objects of different weights" by Nagrani, Bawar, and Su. The MS claims to test the accuracy of Galileo's conclusion about dropping things from a tower (does not cite Galileo at all). It needs major revisions.
+
+2. Introduction: Sources should be given for what is said about Aristotle and Galileo, preferably primary sources actually by them. The limits of the tests should also be given; these are relevant for drops near the surface of the earth, at slow-ish speeds where drag is negligible.
+
+3. Materials and methods: A photo of the setup is given with a scale bar. The photo should have a caption. Otherwise the methods are relatively clean. The use of $\mu$ in the statement of the hypotheses is confusing. The authors appear to mean population mean here but as this is a physics paper it reads like coefficient of friction; probably best to explicitly identify $t_f$ or something similar ast he variable to be tested. Actual dimensions or make/model or source for the balls dropped should be given for this to be replicable. The software used to do the statistical test was not cited. 
+
+4. Results: Table 1 gives all data but could be more compact or simply the mean and s.d and n reported for the two different treatments (kickball versus baseball). These are given after but could just be the table; $n$ must be given. How does something have 6.1 degrees of freedom?
+
+5. Discussion: It might be better to say the physical meaning backed up with the statistics: Mean fall time is not different between baseball and kickball (Tabl1 1; p=0.468).
+
+6. Conclusion should be part of the discussion not a separate section.
+
+7. References - The authors cite a creationist website?! What's up with that! This is not a reliable source!!!! It's not peer reviewed by reputable scholars, even if you are using it to guide discussions of Galileo. The actual dropping of things from the Leaning Tower is apochryphal - doubtful it even actually happened.
+
+
+
