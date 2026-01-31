@@ -1,10 +1,11 @@
-\documentclass[reprint,amsmath,amssymb,aps]{revtex4-2}
+\documentclass[reprint,amsmath,amssymb,aps,twoside]{revtex4-2}
 
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{dcolumn}
 \usepackage{bm}
 \usepackage{siunitx}
+%\usepackage{tikz,pgfplots}
 \sisetup{separate-uncertainty=true}
 \usepackage[colorlinks,allcolors=blue]{hyperref}
 \usepackage{cleveref}
@@ -13,8 +14,27 @@
 \crefname{table}{Table}{Tables}
 \usepackage{svg}
 
+% set PDF metadata
+\hypersetup{%
+pdftitle={Gravitational acceleration affects falling objects equally},
+pdfauthor={Sejal Nagrani, Julia Bawar, and Kelly Su},
+}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,RO]{J S\&E \textbf{2}, 27--30 (2026)}
+\fancyhead[LO]{Nagrani, Bawar, and Su}
+\fancyhead[LE]{Gravitational acceleration affects falling objects equally}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{mytitlepage}{
+\fancyhf{}
+\fancyhead[C]{Journal of Science \& Engineering \textbf{2}, 27--30 (2026)}
+\fancyfoot[C]{\thepage}
+}
+
 
 \begin{document}
+\setcounter{page}{28}
 
 \title{Gravitational acceleration affects falling objects equally}
 \author{Sejal Nagrani}
@@ -31,7 +51,7 @@ This experiment examines two famous hypotheses about the motion of falling objec
 
 \keywords{keywords here}
 
-\maketitle
+\maketitle\thispagestyle{mytitlepage}
 
 
 
