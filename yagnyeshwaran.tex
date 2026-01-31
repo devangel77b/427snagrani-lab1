@@ -1,0 +1,200 @@
+\documentclass[reprint,amsmath,amssymb,aps]{revtex4-2}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{siunitx}
+\sisetup{separate-uncertainty=true}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage{cleveref}
+\crefname{equation}{}{}
+\crefname{figure}{Fig.}{Figs.}
+\crefname{table}{Table}{Tables}
+\usepackage{svg}
+
+
+\begin{document}
+
+\title{Examining the Relationship Between Conserved and Released Energy}
+
+\author{Sagarika Yagnyeshwaran}
+\email{Contact author: 426syagnyeshwaran@frhsd.com}
+\author{Emily Chen}
+\author{Andrew Kabatsky}
+\author{Aleksandra Guimaraes}
+\author{Vijita Ayyangar}
+\author{Nitika Kishore}
+\affiliation{Science \& Engineering Magnet Program, \href{https://manalapan.frhsd.com/}{Manalapan High School}, Englishtown, NJ 07726 USA}
+\date{\today}
+
+\begin{abstract}
+The First Law of Thermodynamics, also known as the Law of Conservation of Energy, states that energy can neither be lost nor gained, only transformed. This is verified in this lab through the use of a crossbow and a foam dart as the system. In this lab, we confirm that the Law of Conservation of Energy holds true by testing whether the potential energy of a crossbow is equal to the kinetic energy of the dart released by the crossbow. Our results were confirmed by the values obtained from this experiment.
+
+\end{abstract}
+
+\keywords{keywords here}
+
+\maketitle
+
+\section{Introduction}
+Kinetic energy is the energy an object has while in motion \cite{tipler}:
+\begin{equation} 
+KE = \frac{1}{2}mv^2
+\label{eq:1}
+\end{equation}
+where $KE$ is the energy produced in Joules (\unit{\joule}), $m$ is the mass in kilograms (\unit{\kilo\gram}), and $\vec{v}$ is the velocity produced in meters per second (\unit{\meter\per\second}) \cite{barrons}. \Cref{eq:1} reflects that an object's kinetic energy involves its mass and velocity. 
+
+Assuming the force applied from the crossbow string is conservative, we can use the work equation to calculate the potential of the crossbow: \cite{tipler} \begin{equation}
+    U = \sum (0.01 \; m) \times F(x)
+\label{eq:2}
+\end{equation}
+where $PE$ is the energy produced in Joules (\unit{\joule}), $\vec{F}$ is the force in Newtons (\unit{\newton}), and $\vec{d}$ is the displacement in meters (\unit{\meter}). 
+
+By applying the law of conservation of energy, we can understand how energy transforms from one form to another within a system. Calculating the different variables like velocity, force, or distance allows us to predict how energy will behave in these systems. 
+
+Therefore, we wish to examine the relationship between conserved and released energy, verifying the law of conservation of energy. 
+
+If energy is perfectly conserved, we hypothesize that 
+\begin{equation} 
+H_0: K_1+U_1=K_2+U_2 
+\label{eq:3}
+\end{equation}
+
+Since the initial kinetic energy of the system is 0 and the final potential energy of the dart is 0, the equation above can be simplified to:
+\begin{equation} 
+H_0:U_1=K_2 
+\label{eq:4}
+\end{equation} 
+
+The kinetic energy also includes the missing terms that were not directly measured.
+
+
+Alternatively, if energy is not perfectly conserved, 
+\begin{equation} 
+H_1: K_1 + U_1  \neq K_2 + U_2  \; \rightarrow \; U_1  \neq K_2 
+\label{eq:5}
+\end{equation}
+where $K$ refers to the kinetic energy and $U$ refers to the potential energy. We tested these hypotheses by calculating the kinetic energy of the dart over many trials and comparing the values to our estimated value for potential energy.  We then compared our values for kinetic energy to our values for potential energy. 
+
+
+\section{Methods and materials}
+\subsection{Finding Kinetic Energy}
+
+
+In this experiment, we weighed the dart, which was 0.0008 kg and the crossbow which was 0.32034 kg using the digital scale (Smart Weigh SWS100). We used a crossbow projectile system utilizing the Adventure Awaits! Crossbow (D \& D Products, LLC) to fire the dart 3.5 meters away from the whiteboard, repeating the experiment for a total of n=15 replicates. For each trial we recorded on an iPhone 15 (Apple; Cupertino, CA), and used DaVinci Resolve to look at the audio spikes - the exact moments that the dart was launched and when it landed - to precisely measure the time it takes for the dart to get launched from the crossbow to the whiteboard \cite{davinciresolve}. All trials started at rest.
+
+
+\begin{figure}[hb]
+    \centering
+    \includegraphics[width=0.4\textwidth]{lab2(2).png}
+    \caption{\label{fig:labsetupimage} Experimental setup showing the dart and crossbow system firing at the target on the whiteboard}
+\end{figure} 
+
+
+To calculate the kinetic energy for each trial, we assumed constant velocity, and both friction and air resistance as negligible. We then calculated velocity using the distance \textit{d} from the crossbow to the whiteboard over the time \textit{t} we measured for each trial:
+
+\begin{equation} 
+\vec{v} = \frac{\Delta dx}{\Delta dt} 
+\label{eq:6}
+\end{equation}
+
+
+
+The velocities of the dart for each trial as well as the average velocity can be seen in \cref{tab:newtable1}.
+
+Then, we inputted the velocity into the kinetic energy equation, using mass $m$ for the dart. We calculated the kinetic energy for each trial. Each of the values as well as the average kinetic energy can be seen in the \Cref{tab:newtable1}. 
+
+
+
+\begin{figure} [hb]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Lab 3.1 Free Body Diagram .png}
+    \caption{\label{fig:fbd} Free Body Diagram of the dart in isolation showing kinetic energy }
+\end{figure}
+
+
+
+\input{table1lab2}
+ 
+
+\subsection{Finding Potential Energy}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{reimann sum.png}
+    \caption{\label{fig:Riemann sum} Riemann sum graph}
+\end{figure} 
+
+To find the potential energy of the system stored in the crossbow, in 0.01 m intervals, we measured the amount of force required to pull the string of the crossbow over a total distance of 0.1 m from rest as the string on the crossbow was pulled and then released.  Then, we plotted our measured forces for each 0.01 m interval on \cref{fig:distance}.  The x-axis is labeled as distance while the y-axis is labeled as force. To calculate the potential energy, we calculated the area underneath the curve using the Trapezoidal method, as seen in \cref{fig:Riemann sum}, which is the integral of force with respect to displacement. Due to the fact that we have not worked with integration in the past, we used the Trapezoidal Riemann Sum to approximate the potential energy value that would have been calculated had we followed proper integration rules. 
+
+\cref{fig:Riemann sum} demonstrates the Trapezoidal method used as substitute for formal integration. \cite{calculus}
+
+
+\begin{equation} 
+PE = \frac{1}{2}(\vec{F_1} + \vec{F_2})(d_{2}-d_1)+...+(\vec{F_{9}}+\vec{F_{10}})(d_{10}-d_{9})
+\label{eq:7}
+\end{equation}
+
+This equation is used to calculate the potential energy using the Trapezoidal Riemann Sum Method. Where $\vec{F}$ refers to force in newtons N and \textit{d} refers to distance in meters \unit{\meter}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Lab 3.1 Free Body Diagram (2).png}
+    \caption{\label{fig:fbd2} Free body diagram of the crossbow projectile system showing potential energy }
+\end{figure} 
+
+\section{Results}
+Through our lab results, we find that energy is lost through the experiment, evident through the calculated potential energy being higher than the calculated kinetic energy. 15 trials were conducted with the same dart measuring 0.0008 kg and the kinetic energy, as tabulated in \cref{tab:newtable1}, has a mean of 0.39 \unit{\joule}. The potential energy is calculated to be 0.585 \unit{\joule} using the method in \cref{fig:Riemann sum}. 
+
+
+\cref{fig:distance} illustrates the change in force as the distance across the crossbow increases. The curve plotted in blue shows an overall near-exponential trend, which shows that this is not a perfectly linear Hookean spring system. 
+
+The potential energy value calculated using the Trapezoidal Riemann Sum Method \eqref{eq:7} provides us with a value of 0.585 \unit{\joule}, while the kinetic energy value calculated using Equation \eqref{eq:1} gives us a mean value of 0.39 \unit{\joule} $\pm$ 1 S.D. of 0.06 \unit{\joule} (\cref{tab:newtable1}). 
+
+\begin{figure} [h]
+\centering
+\includegraphics[width=0.4\textwidth]{Distance v. Force.png}
+\caption{\label{fig:distance} Graph of Distance Across Cross (m) Bow versus Force (N). Each point indicates the force at a certain distance that the string was pulled back from the rest position. }
+\end{figure} 
+
+As tabulated in \cref{tab:newtable1}, the standard deviation of kinetic energy is 0.06. As our experiment only contained 15 trials, for more precise results and a lower standard deviation, more trials will have to be conducted.
+
+The overall efficiency is calculated using the formula
+
+\begin{equation} 
+\eta = \frac{E_{out}}{E_{in}} \times 100\%
+\label{eq:8}
+\end{equation}
+
+where the potential energy of 0.585 J is the input and the kinetic energy of 0.39 J is the output. This calculation gives us an estimate of the efficiency of the system, which is at around 66.67\%. Nearly a third of the energy is lost in the process of firing the dart, so it can be assumed that this would be similar to other mechanisms like medieval and modern hunting crossbows. 
+
+By calculating the change in potential energy to kinetic energy we can calculate the energy lost, likely due to friction:
+
+\begin{equation} 
+U - K = \textit{Energy Lost}
+\label{eq:9}
+\end{equation}
+
+
+Assuming that all of the energy lost was due to friction, we can calculate the force of friction by dividing the energy lost in Joules (J) by the distance the dart traveled on the crossbow in meters m.
+
+\begin{equation} 
+	F_{friction} = \frac{W}{d} = \frac{0.195 J}{0.1 m} = 1.95 N
+\label{eq:10}
+\end{equation}
+
+However, as air resistance and recoil can also have an effect on the energy lost in the crossbow-dart system, we can assume this is the highest value of friction that could have occurred.
+
+
+\section{Discussion}
+We reject the null hypothesis, which states that energy is perfectly conserved, as a major energy loss can be observed. This loss of energy can be explained by friction in the shaft of the crossbow and air resistance when the dart shoots out. To lessen the impact of friction, we can add an adhesive with a lower coefficient of friction to the wood of the crossbow, such as tape made from polytetrafluoroethylene (PTFE), which has a coefficient of friction of about 0.04, or Hi-T-Lube, which has a coefficient of about 0.03, as opposed to the friction coefficient of wood which is about 0.3 to 0.5 \cite{ptf}.
+When using DaVinci Resolve \cite{davinciresolve}, there may have been some error in finding the exact time of the darts launch and landing since the frames in the software did not exactly line up with the audio spikes. 
+Any other discrepancies related to the experiment and the data collected by hand can be attributed to human error. Ultimately, for a more accurate account of energy conservation, we would have to calculate the energy lost to air resistance and recoil.
+
+\section{Acknowledgements}
+We thank A Ortega for her momentum writeup which served as a reference. VA, EC, AG, AK, NK, and SY developed the first draft of the manuscript and collected the data. Everyone contributed to revisions.
+
+
+\bibliography{lab.bib}
+\end{document}
