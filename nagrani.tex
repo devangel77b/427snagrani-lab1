@@ -13,6 +13,8 @@
 \crefname{figure}{Fig.}{Figs.}
 \crefname{table}{Table}{Tables}
 \usepackage{svg}
+\svgpath{{./data/}}
+\usepackage{booktabs}
 
 % set PDF metadata
 \hypersetup{%
@@ -88,6 +90,9 @@ To solve for the gravitational acceleration $g$, we defined the downwards direct
 
 \subsection{Drop tests}
 \begin{figure}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{figures/fig1.png}
+\end{center}
 \caption{A. Outdoor experimental setup depicting the drop height (\qty{5}{\meter}) used for timing falling objects. B. Kickball (left) and baseball (right).} 
 \label{fig:1}
 \end{figure}
@@ -110,27 +115,29 @@ Move stuff here.
 
 
 \section{Results}
-\Cref{tab:3} gives the measured fall times for kickball and baseball. A summary of these data is given in \cref{tab:4} and \cref{fig:3}.
+\Cref{tab:4} summarizes the measured fall times and estimates of $g$ for kickball and baseball. The data are plotted in \cref{fig:2}. Differences are not significant between baseball and kickball ($t$-test, $p=0.9269$ for $t$, $p=0.8643$ for $g$ estimates).
 
-\begin{table}
-\caption{Fall times (\unit{\second}) for the kickball and baseball across five trials, including timing measurements from two individuals.}
-\label{tab:3}
-\end{table}
-
-\begin{table}
+\begin{table}[b]
 \caption{Fall times for kickball and baseball (mean $\pm$ 1 s.d.), for $n=5$ drops each, and corresponding estimates of $g$ based on \cref{eq:2}.}
 \label{tab:4}
+\begin{tabular}{lcc}
+\toprule
+type & $t$, \unit{\second} & $g$, \unit{\meter\per\second\squared} \\
+\midrule 
+baseball & \num{0.84\pm0.08} & \num{14.7\pm2.8} \\
+kickball & \num{0.84\pm0.07} & \num{14.5\pm2.4} \\
+\bottomrule
+\end{tabular}
 \end{table}
 
-\begin{figure}
-\caption{Bar chart of fall times for kickball and baseball. Differences are not significant (stats blurbage here).}
+\begin{figure}[t]
+\begin{center}
+\includesvg{newfig2.svg}
+\end{center}
+\caption{(left) Bar chart of measured fall times. (right) Bar chart of $g$ estimates. Differences are not significant between baseball and kickball ($t$-test, $p=0.9269$ for $t$, $p=0.8643$ for $g$ estimates).}
 \label{fig:2}
 \end{figure}
 
-\begin{figure}
-\caption{Bar chart of $g$ estimates for kickball and baseball. Differences are not significant (stats blurbage here).}
-\label{fig:3}
-\end{figure}
 
 
 
