@@ -45,7 +45,7 @@
 <polyline points='30.40,30.37 111.79,30.37 ' style='stroke-width: 0.78; stroke: #EBEBEB; stroke-linecap: butt;' />
 <polyline points='52.60,130.51 52.60,3.99 ' style='stroke-width: 0.78; stroke: #EBEBEB; stroke-linecap: butt;' />
 <polyline points='89.59,130.51 89.59,3.99 ' style='stroke-width: 0.78; stroke: #EBEBEB; stroke-linecap: butt;' />
-<line x1='30.40' y1='124.76' x2='111.79' y2='124.76' style='stroke-width: 0.78; stroke-linecap: butt;' />
+<line x1='30.40' y1='124.76' x2='111.79' y2='124.76' style='stroke-width: 0.78; stroke: #B3B3B3; stroke-linecap: butt;' />
 <rect x='43.35' y='19.54' width='18.50' height='105.22' style='stroke-width: 0.78; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B3B3B3;' />
 <rect x='80.34' y='19.17' width='18.50' height='105.59' style='stroke-width: 0.78; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B3B3B3;' />
 <polyline points='47.05,9.74 58.15,9.74 ' style='stroke-width: 0.78; stroke-linecap: butt;' />
