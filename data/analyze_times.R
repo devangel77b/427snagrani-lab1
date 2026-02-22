@@ -10,7 +10,7 @@ summary_data <- dplyr::summarise(grouped,
 
 fig <- ggplot(summary_data) +
     geom_hline(yintercept=0) + 
-    geom_bar( aes(x=type, y=t), stat="identity", fill="gray50",width=0.5) +
+    geom_bar( aes(x=type, y=t), stat="identity", fill="gray70",width=0.5) +
     geom_errorbar( aes(x=type, ymin=t-sd, ymax=t+sd), width=0.3) +
     theme_bw(base_size=8) +
     theme(axis.title.x = element_blank()) +
