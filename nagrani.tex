@@ -14,7 +14,6 @@
 \crefname{table}{Table}{Tables}
 \usepackage{svg}
 \svgpath{{./data/}}
-\usepackage{booktabs}
 
 % set PDF metadata
 \hypersetup{%
@@ -117,18 +116,21 @@ Move stuff here.
 \section{Results}
 \Cref{tab:4} summarizes the measured fall times and estimates of $g$ for kickball and baseball. The data are plotted in \cref{fig:2}. Differences are not significant between baseball and kickball ($t$-test, $p=0.9269$ for $t$, $p=0.8643$ for $g$ estimates).
 
-\begin{table}[t]
-\caption{Fall times for kickball and baseball (mean $\pm$ 1 s.d.), for $n=5$ drops each, and corresponding estimates of $g$ based on \cref{eq:2}.}
-\label{tab:4}
-\begin{tabular}{lcc}
-\toprule
-type & $t$, \unit{\second} & $g$, \unit{\meter\per\second\squared} \\
-\midrule 
-baseball & \num{0.84\pm0.08} & \num{14.7\pm2.8} \\
-kickball & \num{0.84\pm0.07} & \num{14.5\pm2.4} \\
-\bottomrule
-\end{tabular}
-\end{table}
+\input{tables/table4.tex}
+%\begin{table}[t]
+%\caption{Fall times for kickball and baseball (mean $\pm$ 1 s.d.), for $n=5$ drops each, and corresponding estimates of $g$ based on \cref{eq:2}.}
+%\label{tab:4}
+%\begin{center}
+%\begin{ruledtabular}
+%\begin{tabular}{lcc}
+%type & $t$, \unit{\second} & $g$, \unit{\meter\per\second\squared} \\
+%\colrule
+%baseball & \num{0.84\pm0.08} & \num{14.7\pm2.8} \\
+%kickball & \num{0.84\pm0.07} & \num{14.5\pm2.4} \\
+%\end{tabular}
+%\end{ruledtabular}
+%\end{center}
+%\end{table}
 
 \begin{figure}[t]
 \begin{center}
