@@ -6,7 +6,7 @@
 \usepackage{bm}
 \usepackage{siunitx}
 %\usepackage{tikz,pgfplots}
-\sisetup{separate-uncertainty=true}
+\sisetup{separate-uncertainty=true, multi-part-units=single}
 \usepackage[colorlinks,allcolors=blue]{hyperref}
 \usepackage{cleveref}
 \crefname{equation}{}{}
@@ -47,64 +47,62 @@ pdfauthor={Sejal Nagrani, Julia Bawar, and Kelly Su},
 \date{\today}
 
 \begin{abstract}
-This experiment examines two famous hypotheses about the motion of falling objects, one being Aristotle’s idea that heavier objects fall faster than lighter ones, and the other being Galileo’s idea that objects fall at a constant acceleration when air resistance is negligible. Several trials were conducted where we released a rubber kickball and a leather baseball from a height of \qty{5}{\meter} to obtain the times it took for each object to reach a position $y = 5$ from the initial position $y = 0$, where downwards is defined to be the positive direction. With the obtained time values with a standard deviation of \qty{\pm 0.07}{\second} and \qty{\pm 0.08}{\second} for the kickball and baseball, respectively, we solved for the acceleration and found that they were approximately equal. We then performed a two-sample $t$-test to determine whether the difference in mean fall times was statistically significant. The mean fall times, collected from multiple people to minimize variability, were \qty{0.839}{\second} for the kickball and \qty{0.836}{\second} for the baseball. It yielded a $t$-statistic of $t = -0.084$ and a one-tailed $p$-value of $p = 0.468$. Since $p > 0.05$, no statistically significant difference was found, thus supporting Galileo’s idea that objects fall at a constant acceleration when air resistance is negligible.
+This experiment examines two hypotheses about the motion of falling objects: Aristotle’s idea that heavier objects fall faster than lighter ones, and Galileo’s idea that objects fall at a constant acceleration when air resistance is negligible. Five drop tests were conducted in which we released a kickball ($m=\qty{0.210}{\kilo\gram}$) and a baseball ($m=\qty{0.144}{\kilo\gram}$) from a height of \qty{5}{\meter} to obtain the times it took for each object to fall a distance of \qty{5}{\meter}. The measurements allowed us to estimate the acceleration experienced by each. Baseballs fell in \qty{0.84\pm0.07}{\second}, while kickballs fell in \qty{0.84\pm0.07}{\second}; the resulting accelerations were \qty{14.7\pm2.8}{\meter\per\second\squared} and \qty{14.5\pm2.4}{\meter\per\second\squared}, respectively. Accelerations were approximately equal, regardless of mass; and differences between time to fall and between acceleration were not statistically significant, thus supporting Galileo’s hypothesis that objects fall at a constant acceleration when air resistance is negligible.
 \end{abstract}
 
-\keywords{keywords here}
+%\keywords{keywords here}
 
 \maketitle\thispagestyle{mytitlepage}
 
 
 
 \section{Introduction}
-In one-dimensional kinematics, the position function is a function of time that connects time $t$, acceleration $a$, initial velocity $v_0$, and initial position $y_0$ to produce a final position of an object\cite{tipler, openstax, barrons}:
+In one-dimensional kinematics, the position function $y(t)$ is a function that connects time $t$, acceleration $a$, initial velocity $v_0$, and initial position $y_0$ to produce a final position of an object\cite{tipler, openstax, barrons}:
 \begin{equation}
 y = \frac{1}{2} a t^2 + v_0 t + y_0.
 \label{eq:1}
 \end{equation}
-We have rewritten \cref{eq:1} to solve for the gravitational acceleration constant $a = -g$, assuming that the initial velocity $v_0 = \qty{0}{\meter\per\second}$, and initial position $y_0 = \qty{0}{\meter}$:
+We have rewritten \cref{eq:1} to solve for the gravitational acceleration constant $a = -g$, assuming that the initial velocity $v_0 = \qty{0}{\meter\per\second}$, initial position $y_0 = h$, and final position is $y=0$ at $t$:
 \begin{equation}
-g = -\dfrac{2 y_f}{t^2}.
+g = \dfrac{2 h}{t^2}.
 \label{eq:2}
 \end{equation}
 
-Gravity has been a known force in physics, where the gravitational constant $g = \qty{9.81}{\meter\per\second\squared}$ \cite{tipler, openstax, barrons}. Aristotle proposed that heavier objects fall faster than lighter objects, while Galileo Galilei, an Italian physicist, proposed that all objects fall at the same rate of acceleration when air resistance is negligible \cite{galilei:1638:discorsi, hall:2022:motion, aristotle:physics, machamer:2021:galileo}, both aiming to make sense of this force. To test their hypotheses, we predicted that the acceleration of falling objects is constant regardless of their mass, and then conducted several trials using a rubber kickball and a leather baseball to explore the concept of gravity near the Earth’s surface.
+The importance of gravity has long been recognized in physics. The gravitational constant $g = \qty{9.81}{\meter\per\second\squared}$ describes the acceleration of an object falling near the Earth's surface \cite{tipler, openstax, barrons}; but this has not always been known. In antiquity, Aristotle asserted that heavier objects fall faster than lighter objects \cite{aristotle:physics}, an assertion that was not challenged until Galileo Galilei, an Italian physicist, proposed that all objects fall at the same rate of acceleration when air resistance is negligible \cite{galilei:1638:discorsi, hall:2022:motion, machamer:2021:galileo}. To test their hypotheses, we predicted that the acceleration of falling objects is constant regardless of their mass, and then conducted several drop tests using a kickball and a baseball. 
 
 The null hypothesis and alternative hypothesis are listed below: 
 \begin{align}
 H_0: \bar{t}_{k} &= \bar{t}_{b} \\
 H_1: \bar{t}_{k} &< \bar{t}_{b}
 \end{align}
-where $\bar{t}_{k}$ and $\bar{t}_{b}$ denote the mean fall times of a kickball and baseball, respectively.  The null hypothesis $H_0$ states that there is no difference in the mean fall time of the two objects, after Galileo \cite{galilei:1638:discorsi, machamer:2021:galileo}, while the alternative hypothesis $H_1$ states that the heavier object (kickball) has falls faster, after Aristotle \cite{aristotle:physics}. 
+where $\bar{t}_{k}$ and $\bar{t}_{b}$ denote the mean fall times of a kickball and baseball, respectively.  The null hypothesis $H_0$ states that there is no difference in the mean fall time of the two objects, after Galileo \cite{galilei:1638:discorsi, machamer:2021:galileo}, while the alternative hypothesis $H_1$ states that the heavier object (kickball) falls faster, after Aristotle \cite{aristotle:physics}. 
 
-To solve for the gravitational acceleration $g$, we defined the downwards direction as positive, plugged the obtained times and final position $y_f = \qty{-5}{\meter}$ into \cref{eq:2}, and then compared the objects’ respective accelerations to see if they were equal. To verify our hypothesis, we also ran a two-sample $t$-test, assuming unequal variances, to further ensure its accuracy.
-
-
+We could test among these hypotheses simply by dropping both objects and seeing which one hits the ground first. However, we chose to estimate the gravitational accelerations experienced by each as a further test. To solve for the gravitational acceleration $g$, we measured the fall time $t$ and used \cref{eq:2}. This allowed us to compare the objects’ respective accelerations to see if they were equal. To verify our hypothesis, we also ran a two-sample $t$-test, assuming unequal variances, to further ensure its accuracy \cite{starnes:2015:practice}.
 
 
 
 
+\begin{figure}[b]
+\begin{center}
+\includegraphics{data/newfig1.pdf}
+\end{center}
+\caption{A. Outdoor experimental setup depicting the drop height (\qty{5}{\meter}) used for timing falling objects. B. (left) Kickball ($m=\qty{0.210}{\kilo\gram}) and (right) baseball ($m=\qty{0.144}{\kilo\gram}).} 
+\label{fig:1}
+\end{figure}
 
 \section{Methods and materials}
 
 \subsection{Drop tests}
-\begin{figure}[t]
-\begin{center}
-\includegraphics{data/newfig1.pdf}
-\end{center}
-\caption{A. Outdoor experimental setup depicting the drop height (\qty{5}{\meter}) used for timing falling objects. B. Kickball (left) and baseball (right).} 
-\label{fig:1}
-\end{figure}
-In our experiment, we had one person stand inside a classroom on the second-story window, approximately \qty{5}{\meter} above the ground, to release objects, as shown in \cref{fig:1}A. Two of those objects were a rubber kickball ($m=\qty{0.210}{\kilo\gram}$) with a circumference of \qty{0.565}{\meter} and a leather baseball ($m=\qty{0.144}{\kilo\gram}$) with a circumference of \qty{0.23}{\meter}, shown in \cref{fig:1}B, which we focused on for the remainder of the experiment. 
+In our experiment, we had one person stand inside a classroom at a second-story window, approximately \qty{5}{\meter} above the ground, to release objects, as shown in \cref{fig:1}A. Two of those objects were a kickball ($m=\qty{0.210}{\kilo\gram}$; Walmart; Freehold, NJ) with a circumference of \qty{0.565}{\meter} and a baseball ($m=\qty{0.144}{\kilo\gram}$; Walmart; Freehold, NJ) with a circumference of \qty{0.23}{\meter}, shown in \cref{fig:1}B, which we focused on for the remainder of the experiment. 
 
-A group of about five people stood outside on the ground taking time measurements, where each person managed one digital stopwatch with a precision of \qty{\pm 0.01}{\second}. A separate group of people was also outside on the ground videotaping each trial at 30 and 60 \unit{frame\per\second}.  
+A group of observers outside at ground level measured time to fall, where each person managed one digital stopwatch (Pulivia YS-802; Shenzhen, China) with a precision of \qty{\pm 0.01}{\second}. Additional observers outside at ground level filmed each trial at 30 and 60 \unit{frame\per\second} using a smartphone (iPhone 13; Apple Inc; Cupertino, CA).  
 
-For each trial, a sequential countdown from three down to one and a verbal command ``drop'' were communicated via megaphone by the ground team to signal the person inside the classroom to release the object from his hands by removing his hands from contact with the object or by opening his fist, depending on the size of the object. On ``drop'', the timers would begin their stopwatches and, through visual observation, would stop their stopwatches when the object made contact with the ground. The videographers would begin recording before the countdown and stop recording a couple of seconds after the object hits the ground. The times obtained by each stopwatch were then written down on a piece of paper for documentation for each trial to be averaged later.
+For each trial, a sequential countdown from three down to one and a verbal command ``drop'' were communicated via megaphone (Pyle USA; Brooklyn, NY) to signal the person at the window to release the object from his hands by removing his hands from contact with the object or by opening his fist, depending on the size of the object. On ``drop'', the timers would begin their stopwatches and, through visual observation, would stop their stopwatches when the object made contact with the ground. The videographers would begin recording before the countdown and stop recording a couple of seconds after the object hits the ground. The times obtained by each stopwatch were then recorded for statistical analysis. This process was repeated over five trials, one object per trial, where each object was released from the same person's hands at the same height to maintain consistency. The experiment was conducted outdoors under calm weather conditions to minimize the effect of wind and other external factors on the objects as they fell.
 
-This process was repeated over five trials, one object per trial, where each object was released from the same person's hands at the same height to maintain consistency. Five trials were sufficient to estimate the mean fall time and variability while minimizing the effects of human reaction time error because the experimental conditions were held constant across all trials. Thus, additional trials were not expected to make any significant change in the measured mean fall times, $\bar{x}_{k}$  and $\bar{x}_{b}$. The experiment was conducted outdoors under calm weather conditions to minimize the effect of wind and other external factors on the objects as they fell.
+%Five trials were sufficient to estimate the mean fall time and variability while minimizing the effects of human reaction time error because the experimental conditions were held constant across all trials. Thus, additional trials were not expected to make any significant change in the measured mean fall times, $\bar{x}_{k}$  and $\bar{x}_{b}$. 
 
 \subsection{Analysis}
-Move stuff here. Analysis was done in R \cite{R} using the \texttt{dplyr} and \texttt{ggplot2} packages \cite{dplyr, ggplot2}. Stats reference \cite{starnes:2015:practice}. 
+Statistical analysis \cite{starnes:2015:practice} was done in R \cite{R} using the \texttt{dplyr} and \texttt{ggplot2} packages \cite{dplyr, ggplot2}. For each measured time, \cref{eq:2} was used to estimate $g$. $t$-tests were then performed on measured fall times as well as on the estimates of $g$ from each drop. Data and analysis code are available at \url{https://github.com/devangel77b/427snagrani\_lab1.git}
 
 
 
@@ -114,8 +112,7 @@ Move stuff here. Analysis was done in R \cite{R} using the \texttt{dplyr} and \t
 
 
 \section{Results}
-\Cref{tab:4} summarizes the measured fall times and estimates of $g$ for kickball and baseball. The data are plotted in \cref{fig:2}. Differences are not significant between baseball and kickball ($t$-test, $p=0.9269$ for $t$, $p=0.8643$ for $g$ estimates).
-
+\input{tables/table2.tex}
 \input{tables/table4.tex}
 %\begin{table}[t]
 %\caption{Fall times for kickball and baseball (mean $\pm$ 1 s.d.), for $n=5$ drops each, and corresponding estimates of $g$ based on \cref{eq:2}.}
@@ -131,8 +128,7 @@ Move stuff here. Analysis was done in R \cite{R} using the \texttt{dplyr} and \t
 %\end{ruledtabular}
 %\end{center}
 %\end{table}
-
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \includesvg{newfig2.svg}
 \end{center}
@@ -140,13 +136,15 @@ Move stuff here. Analysis was done in R \cite{R} using the \texttt{dplyr} and \t
 \label{fig:2}
 \end{figure}
 
+Measured fall times are shown in \cref{tab:2}. \Cref{tab:4} summarizes the measured fall times and estimates of $g$ for kickball and baseball. The data are plotted in \cref{fig:2}. Differences are not significant between baseball and kickball (two-sample $t$-test, $p=0.9269$ for $t$, $p=0.8643$ for $g$ estimates).
+
 
 
 
 \section{Discussion}
 
 \subsection{Aristotle or Galileo?}
-As shown in \cref{tab:3} and \cref{fig:3}, the gravitational constant $g_k$ for $n=5$ kickballs was \qty{14.243\pm1}{\meter\per\second} (mean $\pm$ 1 s.d.). The gravitational constant $g_b$ for $n=5$ baseballs was \qty{14.582\pm1}{\meter\per\second}. We concluded that both objects fell with the same acceleration (one sided, two sample $t$ test, $t=-0.084$, $d.f.=6$, $p=0.468$, $\alpha=0.05$). This result is consistent with Galileo’s hypothesis ($H_0$) that objects fall at the same rate of acceleration when air resistance is negligible; and we reject Aristotle's alternative $H_1$, that heavier objects fall faster. 
+As shown in \cref{tab:4} and \cref{fig:2}, the gravitational constant $g_k$ for $n=5$ kickballs was \qty{14.5\pm2.4}{\meter\per\second} (mean $\pm$ 1 s.d.). The gravitational constant $g_b$ for $n=5$ baseballs was \qty{14.7\pm2.8}{\meter\per\second}. Both objects fell with the same acceleration (one sided, two-sample $t$-test, $t=0.17343$, $df=17.529$, $p=0.8643$, $\alpha=0.05$). This result is consistent with Galileo’s hypothesis ($H_0$) that objects fall at the same rate of acceleration when air resistance is negligible \cite{galilei:1638:discorsi}; and we reject Aristotle's alternative $H_1$, that heavier objects fall faster. 
 
 This experiment provides experimental confirmation of Galileo’s conclusion that objects of different masses fall with the same acceleration when air resistance is negligible. Although limited by human reaction time and a small sample size, our results align with the established physical theory and demonstrate the value of statistical analysis in experimental physics.
 
@@ -154,13 +152,12 @@ This experiment provides experimental confirmation of Galileo’s conclusion tha
 
 
 \subsection{Sources of experimental error}
-Our measured values of $g$ (\cref{tab:3} and \cref{fig:3}) are somewhat higher than a typical value of $g=\qty{9.8}{\meter\per\second\squared}$ \cite{tipler}. Rearranging \cref{eq:1} gives the time $t$ for an object to fall distance $h$ from rest:  
+Our measured values of $g$ (\cref{tab:4} and \cref{fig:2}) are somewhat higher than a typical value of $g=\qty{9.8}{\meter\per\second\squared}$ \cite{tipler,openstax,barrons}. Rearranging \cref{eq:1} gives the time $t$ for an object to fall distance $h$ from rest:  
 \begin{equation}
-%t = √(2h/g) 
 t = \sqrt{\frac{2h}{g}}.
 \label{eq:3}
 \end{equation}
-\Cref{eq:3} predicts the theoretical fall time from a height of \qty{5}{\meter} to be approximately \qty{1.01}{\second}. Our experimentally measured mean fall times (\cref{tab:3} and \cref{tab:4}) were slightly shorter than this value, which we attribute to reaction time error when using handheld stopwatches \cite{hetzler:2008:reliability}, either due to timers starting the stopwatches late or ending them early in anticipation of objects hitting the ground. In hindsight, it may have been beneficial to have the timers give the countdown and verbal command to drop the object.
+\Cref{eq:3} predicts the theoretical fall time from a height of \qty{5}{\meter} to be approximately \qty{1.01}{\second}. Our experimentally measured mean fall times (\cref{tab:2,tab:4,fig:2}) were slightly shorter than this value, which we attribute to reaction time error when using handheld stopwatches \cite{hetzler:2008:reliability,faux:2019:manual}, either due to timers starting the stopwatches late or ending them early in anticipation of objects hitting the ground. In hindsight, it may have been beneficial to have the timers give the countdown and verbal command to drop the object.
 
 Although air resistance was neglected, it may still have had a minor effect due to differences in surface area and shape between the baseball and the kickball. Another limitation is inconsistency in drop height, which could have been reduced by providing a landmark at the window. Future experiments could improve precision by using high-speed cameras to eliminate human timing errors, having better communication among experimenters, or automating drop and timing.
 
