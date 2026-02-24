@@ -57,7 +57,7 @@ This experiment examines two famous hypotheses about the motion of falling objec
 
 
 \section{Introduction}
-In one-dimensional kinematics, the position function is a function of time that connects time $t$, acceleration $a$, initial velocity $v_0$, and initial position $y_0$ to produce a final position of an object\cite{tipler}:
+In one-dimensional kinematics, the position function is a function of time that connects time $t$, acceleration $a$, initial velocity $v_0$, and initial position $y_0$ to produce a final position of an object\cite{tipler, openstax, barrons}:
 \begin{equation}
 y = \frac{1}{2} a t^2 + v_0 t + y_0.
 \label{eq:1}
@@ -68,14 +68,14 @@ g = -\dfrac{2 y_f}{t^2}.
 \label{eq:2}
 \end{equation}
 
-Gravity has been a known force in physics, where the gravitational constant $g = \qty{9.81}{\meter\per\second\squared}$ \cite{tipler}. Aristotle proposed that heavier objects fall faster than lighter objects, while Galileo Galilei, an Italian physicist, proposed that all objects fall at the same rate of acceleration when air resistance is negligible \cite{galilei:1638:discorsi, hall:2022:motion, aristotle:physics}, both aiming to make sense of this force. To test their hypotheses, we predicted that the acceleration of falling objects is constant regardless of their mass, and then conducted several trials using a rubber kickball and a leather baseball to explore the concept of gravity near the Earth’s surface.
+Gravity has been a known force in physics, where the gravitational constant $g = \qty{9.81}{\meter\per\second\squared}$ \cite{tipler, openstax, barrons}. Aristotle proposed that heavier objects fall faster than lighter objects, while Galileo Galilei, an Italian physicist, proposed that all objects fall at the same rate of acceleration when air resistance is negligible \cite{galilei:1638:discorsi, hall:2022:motion, aristotle:physics, machamer:2021:galileo}, both aiming to make sense of this force. To test their hypotheses, we predicted that the acceleration of falling objects is constant regardless of their mass, and then conducted several trials using a rubber kickball and a leather baseball to explore the concept of gravity near the Earth’s surface.
 
 The null hypothesis and alternative hypothesis are listed below: 
 \begin{align}
 H_0: \bar{t}_{k} &= \bar{t}_{b} \\
 H_1: \bar{t}_{k} &< \bar{t}_{b}
 \end{align}
-where $\bar{t}_{k}$ and $\bar{t}_{b}$ denote the mean fall times of a kickball and baseball, respectively.  The null hypothesis $H_0$ states that there is no difference in the mean fall time of the two objects, after Galileo \cite{galilei:1638:discorsi}, while the alternative hypothesis $H_1$ states that the heavier object (kickball) has falls faster, after Aristotle \cite{aristotle:physics}. 
+where $\bar{t}_{k}$ and $\bar{t}_{b}$ denote the mean fall times of a kickball and baseball, respectively.  The null hypothesis $H_0$ states that there is no difference in the mean fall time of the two objects, after Galileo \cite{galilei:1638:discorsi, machamer:2021:galileo}, while the alternative hypothesis $H_1$ states that the heavier object (kickball) has falls faster, after Aristotle \cite{aristotle:physics}. 
 
 To solve for the gravitational acceleration $g$, we defined the downwards direction as positive, plugged the obtained times and final position $y_f = \qty{-5}{\meter}$ into \cref{eq:2}, and then compared the objects’ respective accelerations to see if they were equal. To verify our hypothesis, we also ran a two-sample $t$-test, assuming unequal variances, to further ensure its accuracy.
 
@@ -104,7 +104,7 @@ For each trial, a sequential countdown from three down to one and a verbal comma
 This process was repeated over five trials, one object per trial, where each object was released from the same person's hands at the same height to maintain consistency. Five trials were sufficient to estimate the mean fall time and variability while minimizing the effects of human reaction time error because the experimental conditions were held constant across all trials. Thus, additional trials were not expected to make any significant change in the measured mean fall times, $\bar{x}_{k}$  and $\bar{x}_{b}$. The experiment was conducted outdoors under calm weather conditions to minimize the effect of wind and other external factors on the objects as they fell.
 
 \subsection{Analysis}
-Move stuff here. 
+Move stuff here. Analysis was done in R \cite{R} using the \texttt{dplyr} and \texttt{ggplot2} packages \cite{dplyr, ggplot2}. 
 
 
 
