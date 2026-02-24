@@ -104,7 +104,7 @@ For each trial, a sequential countdown from three down to one and a verbal comma
 This process was repeated over five trials, one object per trial, where each object was released from the same person's hands at the same height to maintain consistency. Five trials were sufficient to estimate the mean fall time and variability while minimizing the effects of human reaction time error because the experimental conditions were held constant across all trials. Thus, additional trials were not expected to make any significant change in the measured mean fall times, $\bar{x}_{k}$  and $\bar{x}_{b}$. The experiment was conducted outdoors under calm weather conditions to minimize the effect of wind and other external factors on the objects as they fell.
 
 \subsection{Analysis}
-Move stuff here. Analysis was done in R \cite{R} using the \texttt{dplyr} and \texttt{ggplot2} packages \cite{dplyr, ggplot2}. 
+Move stuff here. Analysis was done in R \cite{R} using the \texttt{dplyr} and \texttt{ggplot2} packages \cite{dplyr, ggplot2}. Stats reference \cite{starnes:2015:practice}. 
 
 
 
@@ -160,7 +160,7 @@ Our measured values of $g$ (\cref{tab:3} and \cref{fig:3}) are somewhat higher t
 t = \sqrt{\frac{2h}{g}}.
 \label{eq:3}
 \end{equation}
-\Cref{eq:3} predicts the theoretical fall time from a height of \qty{5}{\meter} to be approximately \qty{1.01}{\second}. Our experimentally measured mean fall times (\cref{tab:3} and \cref{tab:4}) were slightly shorter than this value, which we attribute to reaction time error when using handheld stopwatches, either due to timers starting the stopwatches late or ending them early in anticipation of objects hitting the ground. In hindsight, it may have been beneficial to have the timers give the countdown and verbal command to drop the object.
+\Cref{eq:3} predicts the theoretical fall time from a height of \qty{5}{\meter} to be approximately \qty{1.01}{\second}. Our experimentally measured mean fall times (\cref{tab:3} and \cref{tab:4}) were slightly shorter than this value, which we attribute to reaction time error when using handheld stopwatches \cite{hetzler:2008:reliability}, either due to timers starting the stopwatches late or ending them early in anticipation of objects hitting the ground. In hindsight, it may have been beneficial to have the timers give the countdown and verbal command to drop the object.
 
 Although air resistance was neglected, it may still have had a minor effect due to differences in surface area and shape between the baseball and the kickball. Another limitation is inconsistency in drop height, which could have been reduced by providing a landmark at the window. Future experiments could improve precision by using high-speed cameras to eliminate human timing errors, having better communication among experimenters, or automating drop and timing.
 
